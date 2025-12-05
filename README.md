@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Investment Platform Demo (Next.js + Payload CMS)
+
+This is a self-hosted demo using **Next.js 15** and **Payload CMS 3.0** in a single repository.
+
+## Features
+- **Frontend**: Next.js App Router (located in `app/(app)`)
+- **CMS**: Payload CMS (located in `app/(payload)`)
+- **Database**: SQLite (stored locally as `payload.db` - no setup required)
+- **Localization**: Enabled for English and Spanish.
 
 ## Getting Started
 
-First, run the development server:
+1.  Install dependencies:
+    ```bash
+    npm install --legacy-peer-deps
+    ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2.  Run the development server:
+    ```bash
+    npm run dev
+    ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3.  Open [http://localhost:3000/admin](http://localhost:3000/admin) to create your first user (Admin).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+4.  **Create Content**:
+    -   Go to **Pages** and create a page with the slug `home`. Publish it.
+    -   Go to **Posts** and create some blog posts.
+    -   Use the "Locales" switch in the admin top-right to add Spanish content.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+5.  View the Frontend:
+    -   Homepage: [http://localhost:3000](http://localhost:3000)
+    -   Blog: [http://localhost:3000/blog](http://localhost:3000/blog)
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Project Structure
+-   `payload.config.ts`: CMS Configuration (Collections, DB, Plugins).
+-   `collections/`: Schema definitions for Pages and Posts.
+-   `app/(app)`: The public-facing website.
+-   `app/(payload)`: The CMS admin and API routes.

@@ -1,0 +1,15 @@
+/* Custom Admin CSS */
+header {
+    min-height: 80px !important; /* Increase height */
+}
+
+header .app-header__content {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+/* Make the logo/brand larger */
+header a[href="/admin"] {
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+}
